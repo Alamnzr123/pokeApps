@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "83b73a5d-f7d8-461b-95fa-867ec806c8a5",
+		"name": "Test Phincon - PokemonApps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15530359"
+	},
+	"item": [
+		{
+			"name": "POST - POKEMON DATA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"pokemonid\" : \"11\",\r\n        \"renamecount\": \"1\",\r\n        \"nickname\": \"ivsaur\",\r\n        \"imageurl\": \"test-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3005/catch-pokemon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"catch-pokemon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - MY POKEMON (SAVE TO DATABASE)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3005/mypokemons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"mypokemons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH - UPDATE POKEMON DATA",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"pokemonid\" : \"11\",\r\n        \"renamecount\": \"1\",\r\n        \"nickname\": \"coba-1\",\r\n        \"imageurl\": \"test-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3005/rename-pokemon/28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"rename-pokemon",
+						"28"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - POKEMON DATA",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3005/release-pokemon/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"release-pokemon",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - ALL POKEMON",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - DETAIL POKEMON",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/1",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - DETAIL MY POKEMON (SAVE TO DATABASE)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3005/mypokemons/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"mypokemons",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

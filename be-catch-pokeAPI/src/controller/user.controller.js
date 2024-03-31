@@ -16,17 +16,13 @@ function generateFibonacciNumber(num) {
 }
 
 const userController = {
-    listUser: async function (req, res) {
+    listPokemons: async function (req, res) {
         try {
             const response = await axios.get("https://pokeapi.co/api/v2/pokemon/");
-            const pokemonList = response.data.results.map((pokemon) => pokemon.name);
-            res.status(200).send(pokemonList);
-
-            console.log(response.data.results[0].url);
+            res.status(200).send(response.data);
         } catch (err) {
             res.status(400).send(err);
         }
-
     },
 
     listMyPokemons: async function (req, res) {
@@ -39,15 +35,30 @@ const userController = {
         }
     },
 
-    listUserbyId: async function (req, res) {
+    listMyPokemonsbyID: async function (req, res) {
         try {
-            const pokemonName = req.params.name;
-            const response = await axios.get(
-                `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
-            );
+            const { id } = req.params;
+            const result = await model.getUserbyID(id);
+
+            if (result.rowCount) {
+                console.log(result);
+                res.status(200).send(result);
+            } else {
+                res.status(500).send("Data not detected");
+            }
+        } catch (err) {
+            res.status(400).send(err);
+        }
+    },
+
+    listPokemonsbyID: async function (req, res) {
+        try {
+            const { id } = req.params;
+
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
             res.status(200).send(response.data);
         } catch (err) {
-            res.status(404).send("Pokemon not found");
+            res.status(400).send(err);
         }
     },
 
