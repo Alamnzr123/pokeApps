@@ -2,6 +2,8 @@
   "name": "materi_part1",
   "version": "0.1.0",
   "private": true,
+  "author": "Rahmad Alamsyah Nazaruddin",
+  "description": "Frontend PokeApps",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",

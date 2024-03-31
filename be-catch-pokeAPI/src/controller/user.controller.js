@@ -29,6 +29,16 @@ const userController = {
 
     },
 
+    listMyPokemons: async function (req, res) {
+        try {
+            const result = await model.getUserList();
+            console.log(result);
+            res.status(200).send(result);
+        } catch (err) {
+            res.status(400).send(err);
+        }
+    },
+
     listUserbyId: async function (req, res) {
         try {
             const pokemonName = req.params.name;
@@ -67,15 +77,14 @@ const userController = {
     catchPokemon: async function (req, res) {
         try {
 
-            const { pokemonid, renamecount } = req.body;
-
-            const CatchName = await axios.get("https://pokeapi.co/api/v2/pokemon/");
+            const { pokemonid, nickname
+                , imageurl } = req.body;
 
             const data = {
-                nickname: CatchName.data.results[0].name
-                , imageurl: CatchName.data.results[0].url
+                nickname
+                , imageurl
                 , pokemonid
-                , renamecount
+                , renamecount: "0"
             };
 
             const result = await model.CreateUser(data);

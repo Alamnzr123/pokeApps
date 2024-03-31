@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Fetch POKEMON API",
+  "description": "Backend PokeApps",
   "author": "Rahmad Alamsyah Nazaruddin",
   "main": "index.js",
   "type": "module",
